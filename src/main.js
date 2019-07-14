@@ -5,7 +5,7 @@ import App from './App.vue'
 
 import router from '@/router'
 
-import axios from 'axios'
+import axios from '@/api/index.js'
 Vue.prototype.axios = axios
 
 Vue.use(ElementUI)

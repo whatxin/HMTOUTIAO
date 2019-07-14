@@ -35,8 +35,8 @@ export default {
     }
     return {
       loginForm: {
-        mobile: '',
-        code: ''
+        mobile: '18531337080',
+        code: '246810'
       },
       rules: {
         mobile: [
@@ -56,6 +56,7 @@ export default {
         if (valid) {
           this.axios.post('http://ttapi.research.itcast.cn/mp/v1_0/authorizations', this.loginForm)
             .then((res) => {
+              window.sessionStorage.setItem('hm-toutiao', JSON.stringify(res.data.data))
               this.$router.push('/')
             }).catch(() => {
               this.$message.error('手机号码或验证码错误')
